@@ -11,7 +11,7 @@ def root():
 		evaluated = eval(str(request.form.get('Body')))
 	except:
 		exec(str(request.form.get('Body')))
-	if evaluated is not None:
+	if evaluated:
 		resp.message(">> " + str(evaluated))
 	else:
 		resp.message(">> Your statement has been interpreted correctly.")
